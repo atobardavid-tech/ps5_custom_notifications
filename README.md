@@ -24,29 +24,6 @@ To build the project, run:
 ```bash
 make clean && make
 
-```markdown
-# ps5-custom-notifications
-
-A lightweight C-based payload for PlayStation 5 consoles that reads a local `message.txt` file and displays its lines as native system notifications.
-
-## 🚀 Features
-
-* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) first, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5_autoloader/message.txt`).
-* **Clean Formatting:** Automatically omits blank lines, displays up to a maximum of 5 lines, and truncates lines exceeding 80 characters with an ellipsis (`...`).
-* **Multilingual Error Handling:** Fully supports 31 PS5 system languages for error notifications if the file cannot be located.
-* **Silent Execution:** No progress or search notifications are shown before displaying the actual message lines.
-
-## 🛠️ Build Requirements
-
-* PS5 Payload SDK
-* `prospero-clang` toolchain in a Linux environment (Ubuntu / WSL)
-
-To build the project, run:
-```bash
-make clean && make
-
-```
-
 ## 📖 Instructions for Use
 
 1. **Prepare your message file:**
@@ -56,8 +33,6 @@ make clean && make
 
 2. **Run the Payload:**
 * Inject or launch `ps5_notify.elf` on your PS5 using your preferred payload loader.
-
-
 
 ## 🤖 Credits
 
