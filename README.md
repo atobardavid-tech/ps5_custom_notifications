@@ -23,7 +23,7 @@ To ensure system stability and a smooth user experience within the PS5 notificat
 To build the project, run:
 ```bash
 make clean && make
-
+```
 ## 📖 Instructions for Use
 
 1. **Prepare your message file:**
@@ -40,7 +40,5 @@ make clean && make
 * Based on foundational tools and payload structures by John Törnblom.
 * Thanks to **Drakmor** and the **ShadowMountPlus** project for providing a reference for the PS5 system language 
 detection implementation used in this project.
-```
 
-```
 
