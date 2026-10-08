@@ -21,6 +21,7 @@ To ensure system stability and a smooth user experience within the PS5 notificat
 
 * **Max 5 Lines:** Only the first 5 non-empty lines of the `message.txt` file are processed and displayed as individual pop-up notifications. Any subsequent lines are ignored.
 * **Max 90 Characters per Line:** Lines longer than 90 characters are automatically truncated at 86 characters and appended with `...` to prevent UI overflow or notification formatting glitches.
+* **If a line contains spaces (without having any text characters), it can be taken as not empty, and if it is within the first five lines, then it will display an empty notification on the screen.
 
 <p align="center">
   <img src="Screenshots/ss2.jpg" width="500">
