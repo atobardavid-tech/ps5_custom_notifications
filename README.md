@@ -3,7 +3,7 @@
 A lightweight C-based payload for PlayStation 5 consoles that reads a local `message.txt` file and displays its lines as native system notifications.
 
 <p align="center">
-  <img src="Screenshots/ss1.jpg" width="450">
+  <img src="Screenshots/ss1.jpg" width="500">
   <br>
   <em>Two-line demonstration</em>
 </p>
@@ -23,7 +23,7 @@ To ensure system stability and a smooth user experience within the PS5 notificat
 * **Max 90 Characters per Line:** Lines longer than 90 characters are automatically truncated at 86 characters and appended with `...` to prevent UI overflow or notification formatting glitches.
 
 <p align="center">
-  <img src="Screenshots/ss2.jpg" width="450">
+  <img src="Screenshots/ss2.jpg" width="500">
   <br>
   <em>Five-line demonstration</em>
 </p>
@@ -36,7 +36,7 @@ To ensure system stability and a smooth user experience within the PS5 notificat
 To build the project, run:
 
 ```bash
-make clean \&\& make
+make clean && make
 ```
 
 ## 📖 Instructions for Use
