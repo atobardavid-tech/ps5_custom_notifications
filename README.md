@@ -16,9 +16,9 @@ A lightweight C-based payload for PlayStation 5 consoles that reads a local `mes
 * **Silent Execution:** No progress or search notifications are shown before displaying the actual message lines.
 
 >## ⚠️ Limitations
-
+>
 >To ensure system stability and a smooth user experience within the PS5 notification daemon, the payload enforces the following rules:
-
+>
 >* **Max 5 Lines:** Only the first 5 non-empty lines of the `message.txt` file are processed and displayed as individual pop-up notifications. Any subsequent lines are ignored.
 >* **Max 90 Characters per Line:** Lines longer than 90 characters are automatically truncated at 86 characters and appended with `...` to prevent UI overflow or notification formatting glitches.
 >* **If a line contains spaces** (without having any text characters), it can be taken as not empty, and if it is within the first five lines, then it will display an empty notification on the screen.
