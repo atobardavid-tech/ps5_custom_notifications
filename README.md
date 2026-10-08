@@ -43,6 +43,15 @@ make clean && make
 
 1. **Prepare your message file:**
 * Create a text file named `message.txt` containing the lines you want to display.
+
+```bash
+Welcome David!
+All payloads have been executed, you can now start playing!
+Line 3 available: write your personalized message here if you wish.
+Line 4 available: write your personalized message here if you wish.
+Line 5 available: write your personalized message here if you wish.
+```
+
 * Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
 
 2. **Run the Payload:**
