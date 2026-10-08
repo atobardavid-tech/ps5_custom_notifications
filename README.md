@@ -3,14 +3,14 @@
 A lightweight C-based payload for PlayStation 5 consoles that reads a local `message.txt` file and displays its lines as native system notifications.
 
 <p align="center">
-  <img src="Screenshots/ss1.jpg" width="600">
+  <img src="Screenshots/ss1.jpg" width="450">
   <br>
   <em>Two-line demonstration</em>
 </p>
 
 ## 🚀 Features
 
-* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) first, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5\_autoloader/message.txt`).
+* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) first, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5_autoloader/message.txt`).
 * **Clean Formatting \& Limits:** Automatically omits blank lines, displays up to a maximum of 5 lines, and truncates lines exceeding 80 characters with an ellipsis (`...`).
 * **Multilingual Error Handling:** Fully supports 31 PS5 system languages for error notifications if the file cannot be located.
 * **Silent Execution:** No progress or search notifications are shown before displaying the actual message lines.
@@ -23,7 +23,7 @@ To ensure system stability and a smooth user experience within the PS5 notificat
 * **Max 90 Characters per Line:** Lines longer than 90 characters are automatically truncated at 86 characters and appended with `...` to prevent UI overflow or notification formatting glitches.
 
 <p align="center">
-  <img src="Screenshots/ss2.jpg" width="600">
+  <img src="Screenshots/ss2.jpg" width="450">
   <br>
   <em>Five-line demonstration</em>
 </p>
@@ -43,10 +43,10 @@ make clean \&\& make
 
 1. **Prepare your message file:**
 * Create a text file named `message.txt` containing the lines you want to display.
-* Place it either in `/data/ps5\_autoloader/` on the console's internal storage, or inside a `ps5\_autoloader` folder on the root of an exFAT/FAT32 USB drive.
+* Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
 
 2. **Run the Payload:**
-* Inject or launch `ps5\_notify.elf` on your PS5 using your preferred payload loader.
+* Inject or launch `ps5_notify.elf` on your PS5 using your preferred payload loader.
 
 ## 🤖 Credits
 
