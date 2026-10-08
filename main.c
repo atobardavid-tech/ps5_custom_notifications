@@ -101,7 +101,7 @@ typedef struct {
  */
 static const notification_strings_t lang_en = {
     "Error: message.txt not found in /data/ps5_autoloader/",
-    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB"
+    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths"
 };
 
 /*
@@ -109,7 +109,7 @@ static const notification_strings_t lang_en = {
  */
 static const notification_strings_t lang_es_es = {
     "Error: no se ha encontrado el archivo message.txt en /data/ps5_autoloader/",
-    "Error: no se encontro el archivo message.txt en /data/ps5_autoloader/ ni en el USB"
+    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB"
 };
 
 /*
@@ -117,7 +117,7 @@ static const notification_strings_t lang_es_es = {
  */
 static const notification_strings_t lang_es_mx = {
     "Error: no se ha encontrado el archivo message.txt en /data/ps5_autoloader/",
-    "Error: no se encontro el archivo message.txt en /data/ps5_autoloader/ ni en el USB"
+    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB"
 };
 
 /*
@@ -125,7 +125,7 @@ static const notification_strings_t lang_es_mx = {
  */
 static const notification_strings_t lang_ja = {
     "エラー: /data/ps5_autoloader/ に message.txt が見つかりません",
-    "エラー: /data/ps5_autoloader/ および USB に message.txt が見つかりません"
+    "エラー: /data/ps5_autoloader/ および USB パスに message.txt が見つかりません"
 };
 
 /*
@@ -133,7 +133,7 @@ static const notification_strings_t lang_ja = {
  */
 static const notification_strings_t lang_fr_fr = {
     "Erreur : message.txt introuvable dans /data/ps5_autoloader/",
-    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur l'USB"
+    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB"
 };
 
 /*
@@ -141,7 +141,7 @@ static const notification_strings_t lang_fr_fr = {
  */
 static const notification_strings_t lang_fr_ca = {
     "Erreur : message.txt introuvable dans /data/ps5_autoloader/",
-    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur l'USB"
+    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB"
 };
 
 /*
@@ -149,7 +149,7 @@ static const notification_strings_t lang_fr_ca = {
  */
 static const notification_strings_t lang_de = {
     "Fehler: message.txt wurde in /data/ps5_autoloader/ nicht gefunden",
-    "Fehler: message.txt weder in /data/ps5_autoloader/ noch auf USB gefunden"
+    "Fehler: message.txt weder in /data/ps5_autoloader/ noch in USB-Pfaden gefunden"
 };
 
 /*
@@ -157,7 +157,7 @@ static const notification_strings_t lang_de = {
  */
 static const notification_strings_t lang_it = {
     "Errore: message.txt non trovato in /data/ps5_autoloader/",
-    "Errore: message.txt non trovato né in /data/ps5_autoloader/ né su USB"
+    "Errore: message.txt non trovato né in /data/ps5_autoloader/ né nei percorsi USB"
 };
 
 /*
@@ -165,7 +165,7 @@ static const notification_strings_t lang_it = {
  */
 static const notification_strings_t lang_nl = {
     "Fout: message.txt niet gevonden in /data/ps5_autoloader/",
-    "Fout: message.txt niet gevonden in /data/ps5_autoloader/ noch op USB"
+    "Fout: message.txt niet gevonden in /data/ps5_autoloader/ noch in USB-paden"
 };
 
 /*
@@ -173,7 +173,7 @@ static const notification_strings_t lang_nl = {
  */
 static const notification_strings_t lang_pt_pt = {
     "Erro: message.txt nao encontrado em /data/ps5_autoloader/",
-    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem no USB"
+    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB"
 };
 
 /*
@@ -181,7 +181,7 @@ static const notification_strings_t lang_pt_pt = {
  */
 static const notification_strings_t lang_pt_br = {
     "Erro: message.txt nao encontrado em /data/ps5_autoloader/",
-    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem no USB"
+    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB"
 };
 
 /*
@@ -189,7 +189,7 @@ static const notification_strings_t lang_pt_br = {
  */
 static const notification_strings_t lang_ru = {
     "Ошибка: message.txt не найден в /data/ps5_autoloader/",
-    "Ошибка: message.txt не найден ни в /data/ps5_autoloader/, ни на USB"
+    "Ошибка: message.txt не найден ни в /data/ps5_autoloader/, ни на путях USB"
 };
 
 /*
@@ -197,7 +197,7 @@ static const notification_strings_t lang_ru = {
  */
 static const notification_strings_t lang_ko = {
     "오류: /data/ps5_autoloader/에서 message.txt를 찾을 수 없습니다",
-    "오류: /data/ps5_autoloader/ 또는 USB에서 message.txt를 찾을 수 없습니다"
+    "오류: /data/ps5_autoloader/ 또는 USB 경로에서 message.txt를 찾을 수 없습니다"
 };
 
 /*
@@ -205,7 +205,7 @@ static const notification_strings_t lang_ko = {
  */
 static const notification_strings_t lang_zh_tw = {
     "錯誤：在 /data/ps5_autoloader/ 中找不到 message.txt",
-    "錯誤：在 /data/ps5_autoloader/ 或 USB 中找不到 message.txt"
+    "錯誤：在 /data/ps5_autoloader/ 或 USB 路徑中找不到 message.txt"
 };
 
 /*
@@ -213,7 +213,7 @@ static const notification_strings_t lang_zh_tw = {
  */
 static const notification_strings_t lang_zh_cn = {
     "错误：在 /data/ps5_autoloader/ 中找不到 message.txt",
-    "错误：在 /data/ps5_autoloader/ 或 USB 中找不到 message.txt"
+    "错误：在 /data/ps5_autoloader/ 或 USB 路径中找不到 message.txt"
 };
 
 /*
@@ -221,7 +221,7 @@ static const notification_strings_t lang_zh_cn = {
  */
 static const notification_strings_t lang_fi = {
     "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/",
-    "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/ eikä USB:lta"
+    "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/ eikä USB-poluista"
 };
 
 /*
@@ -229,7 +229,7 @@ static const notification_strings_t lang_fi = {
  */
 static const notification_strings_t lang_sv = {
     "Fel: message.txt hittades inte i /data/ps5_autoloader/",
-    "Fel: message.txt hittades inte i /data/ps5_autoloader/ eller på USB"
+    "Fel: message.txt hittades inte i /data/ps5_autoloader/ eller på USB-sökvägar"
 };
 
 /*
@@ -237,7 +237,7 @@ static const notification_strings_t lang_sv = {
  */
 static const notification_strings_t lang_da = {
     "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/",
-    "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/ eller på USB"
+    "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/ eller på USB-stier"
 };
 
 /*
@@ -245,7 +245,7 @@ static const notification_strings_t lang_da = {
  */
 static const notification_strings_t lang_no = {
     "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/",
-    "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/ eller på USB"
+    "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/ eller på USB-baner"
 };
 
 /*
@@ -253,7 +253,7 @@ static const notification_strings_t lang_no = {
  */
 static const notification_strings_t lang_pl = {
     "Blad: nie znaleziono pliku message.txt w /data/ps5_autoloader/",
-    "Blad: nie znaleziono pliku message.txt w /data/ps5_autoloader/ ani na USB"
+    "Blad: nie znaleziono message.txt w /data/ps5_autoloader/ ani w ścieżkach USB"
 };
 
 /*
@@ -261,7 +261,7 @@ static const notification_strings_t lang_pl = {
  */
 static const notification_strings_t lang_en_gb = {
     "Error: message.txt not found in /data/ps5_autoloader/",
-    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB"
+    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths"
 };
 
 /*
@@ -269,7 +269,7 @@ static const notification_strings_t lang_en_gb = {
  */
 static const notification_strings_t lang_tr = {
     "Hata: message.txt dosyasi /data/ps5_autoloader/ icinde bulunamadi",
-    "Hata: message.txt dosyasi ne /data/ps5_autoloader/ icinde ne de USB'de bulunamadi"
+    "Hata: message.txt /data/ps5_autoloader/ icinde veya USB yollarinda bulunamadi"
 };
 
 /*
@@ -277,7 +277,7 @@ static const notification_strings_t lang_tr = {
  */
 static const notification_strings_t lang_ar = {
     "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/",
-    "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/ ولا على USB"
+    "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/ ولا في مسارات USB"
 };
 
 /*
@@ -285,15 +285,15 @@ static const notification_strings_t lang_ar = {
  */
 static const notification_strings_t lang_cs = {
     "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/",
-    "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/ ani na USB"
+    "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/ ani v USB cestách"
 };
 
 /*
  * Hungarian
-  */
+ */
 static const notification_strings_t lang_hu = {
     "Hiba: a message.txt nem talalhato a /data/ps5_autoloader/ mappaban",
-    "Hiba: a message.txt nem talalhato sem a /data/ps5_autoloader/ mappaban, sem az USB-n"
+    "Hiba: a message.txt nem talalhato sem a /data/ps5_autoloader/ mappaban, sem az USB útvonalakon"
 };
 
 /*
@@ -301,7 +301,7 @@ static const notification_strings_t lang_hu = {
  */
 static const notification_strings_t lang_el = {
     "Σφάλμα: το message.txt δεν βρέθηκε στο /data/ps5_autoloader/",
-    "Σφάλμα: το message.txt δεν βρέθηκε ούτε στο /data/ps5_autoloader/ ούτε στο USB"
+    "Σφάλμα: το message.txt δεν βρέθηκε ούτε στο /data/ps5_autoloader/ ούτε στις διαδρομές USB"
 };
 
 /*
@@ -309,7 +309,7 @@ static const notification_strings_t lang_el = {
  */
 static const notification_strings_t lang_ro = {
     "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/",
-    "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/ și nici pe USB"
+    "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/ și nici în căile USB"
 };
 
 /*
@@ -317,7 +317,7 @@ static const notification_strings_t lang_ro = {
  */
 static const notification_strings_t lang_th = {
     "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/",
-    "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/ และบน USB"
+    "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/ และในเส้นทาง USB"
 };
 
 /*
@@ -325,7 +325,7 @@ static const notification_strings_t lang_th = {
  */
 static const notification_strings_t lang_vi = {
     "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/",
-    "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/ cũng như trên USB"
+    "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/ cũng như trong các đường dẫn USB"
 };
 
 /*
@@ -333,7 +333,7 @@ static const notification_strings_t lang_vi = {
  */
 static const notification_strings_t lang_id = {
     "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/",
-    "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/ maupun di USB"
+    "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/ maupun di jalur USB"
 };
 
 /*
@@ -341,7 +341,7 @@ static const notification_strings_t lang_id = {
  */
 static const notification_strings_t lang_uk = {
     "Помилка: message.txt не знайдено в /data/ps5_autoloader/",
-    "Помилка: message.txt не знайдено ні в /data/ps5_autoloader/, ні на USB"
+    "Помилка: message.txt не знайдено ні в /data/ps5_autoloader/, ні на шляхах USB"
 };
 
 
@@ -450,6 +450,15 @@ int main(int argc, char *argv[])
      * 1. Search USB mount points from usb0 to usb7 for message.txt
      */
     for (int i = 0; i <= 7; i++) {
+        char usb_base[32];
+        struct stat st;
+
+        // Comprobar si el punto de montaje físico de la USB (ej: /mnt/usb0) existe
+        snprintf(usb_base, sizeof(usb_base), "/mnt/usb%d", i);
+        if (stat(usb_base, &st) == 0 && S_ISDIR(st.st_mode)) {
+            usb_connected_flag = 1;
+        }
+
         snprintf(
             filepath,
             sizeof(filepath),
@@ -457,21 +466,9 @@ int main(int argc, char *argv[])
             i
         );
 
-        struct stat st;
-        if (stat("/mnt/usb0", &st) == 0 || stat(filepath, &st) == 0) {
-            // Nota de presencia de USB comprobada o directorio base de puerto disponible
-        }
-
-        // Validar si la partición USB o puerto al menos responde físicamente
-        char usb_base[32];
-        snprintf(usb_base, sizeof(usb_base), "/mnt/usb%d", i);
-        if (stat(usb_base, &st) == 0 && S_ISDIR(st.st_mode)) {
-            usb_connected_flag = 1;
-        }
-
         file = fopen(filepath, "r");
         if (file) {
-            // Se encontró el archivo en la USB, detenemos búsqueda aquí
+            // Se encontró el archivo en la USB, detenemos la búsqueda aquí
             break;
         }
     }
@@ -502,7 +499,7 @@ int main(int argc, char *argv[])
     }
 
     /*
-     * 4. Read file line by line (Max 5 lines, max 80 chars per line with '...')
+     * 4. Read file line by line (Max 5 lines, max 90 chars per line with '...')
      */
     int lines_shown = 0;
 
@@ -519,10 +516,10 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        // Truncar a un máximo de 80 caracteres y colocar puntos suspensivos si excede
-        char final_line[96];
-        if (len > 80) {
-            snprintf(final_line, sizeof(final_line), "%.77s...", line_buffer);
+        // Truncar a un máximo de 90 caracteres y colocar puntos suspensivos si excede
+        char final_line[108];
+        if (len > 90) {
+            snprintf(final_line, sizeof(final_line), "%.86s...", line_buffer);
         } else {
             snprintf(final_line, sizeof(final_line), "%s", line_buffer);
         }
