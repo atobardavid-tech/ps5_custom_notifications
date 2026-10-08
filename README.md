@@ -1,4 +1,4 @@
-# ps5-custom-notifications
+# Ps5-custom-notifications
 
 A lightweight C-based payload for PlayStation 5 consoles that reads a local `message.txt` file and displays its lines as native system notifications.
 
