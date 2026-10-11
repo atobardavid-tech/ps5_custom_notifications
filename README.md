@@ -1,75 +1,93 @@
-# **PS5 Autoloader Updater Payload**
+# Ps5-custom-notifications
 
-A C-based payload designed for PlayStation 5 consoles that automates the search for a specific folder (`ps5_autoloader`) on connected USB storage devices 
-(`usb0` through `usb7` ports) and recursively copies it to the console's internal `/data/` directory.It detects the console's language (supporting all 31 system languages)
- and includes native on-screen pop-up notifications (in the console's language) to keep the user informed at all times about the progress.
-
-## **🚀 Features**
-
-* **Automatic USB Detection:** Scans the console's mount points (`/mnt/usb0` through `/mnt/usb7`) to locate the source folder.
-* **Recursive Copy:** Capable of efficiently transferring entire folders, subdirectories, and files of any size.
-* **Visual Feedback (Notifications):** Uses `sceKernelSendNotificationRequest` to display native notices on the PS5 interface indicating:
-  * When the USB search starts.
-  * If the source directory is not found.
-  * When the copy process has begun.
-  * The success notice upon completion of the transfer.
-* **Automatic Language Detection:** Uses `sceSystemServiceParamGetInt` to detect the PS5 system language and display notifications in the 
-corresponding language.
-
-## **What's new in v1.00**
-
-* Added automatic detection of the PS5 system language.
-* Added notification translations for all 31 languages supported by the PS5 system.
-* Notifications are automatically displayed in the language configured on the console.
-
-## **What's new in v1.01**
-
-* Added file filtering: only `.elf` and `.txt` files are copied from the USB `ps5_autoloader` folder.
-* Added destination cleanup: the existing contents of `/data/ps5_autoloader` are removed before copying the new files.
-* This ensures that old files are not left behind when updating the contents of the destination folder.
-
-## **🛠️ Build Requirements**
-
-This project is designed to be compiled using the PS5 Payload SDK and the `prospero-clang` tool in a Linux environment (such as Ubuntu or WSL on Windows).
-
-## **Build Instructions:**
-
-1. Clone or place this repository inside the SDK's samples.
-2. Run the compilation command:
-   ```bash
-   make clean && make
-
-## **📖 Instructions for use:**
-
-1\. Prepare the USB Drive:
-\- Format a USB storage drive in exFAT or FAT32 format.
-\- In the root directory of the USB drive, create a folder with the exact name: ps5\_autoloader.
-\- Place all payloads and the autoload.txt file inside this folder to automatically transfer to the console.
-
-2\. Connect the USB Drive to the PS5:
-\- Insert the USB drive into any of the available USB ports on the PlayStation 5 console.
-
-3\. Run the Payload:
-\- Launch or inject the compiled payload (.elf) using your preferred loading method or exploit on the PS5.
-\(Remember that the PS5 is listening on port 9021).
-
-4\. Monitor the Process:
-\- The payload will automatically scan the ports from usb0 to usb7.
-\- You will see a series of native pop-up notifications on the screen indicating the progress.
-
-5\. Verification:
-\- Once the process is complete, the files will be available in the PS5's /data/ directory.
+A lightweight C-based payload for PlayStation 5 consoles that reads a local `message.txt` file and displays its lines as native system notifications.
 
 <p align="center">
-  <img src="screenshots/English.jpeg" width="600">
+  <img src="Screenshots/ss1.jpg" width="500">
   <br>
-  <em>PS5 Notifications</em>
+  <em>Two-line demonstration</em>
 </p>
+
+## 🚀 Features
+
+* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) first, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5_autoloader/message.txt`).
+* **Clean Formatting & Limits:** Automatically omits blank lines, Use the settings in the message.txt file to display the desired number of lines, being able to adjust the number of characters and delay between notifications. 
+* **Multilingual Error Handling:** Fully supports 31 PS5 system languages for error notifications if the file cannot be located.
+* **Silent Execution:** No progress or search notifications are shown before displaying the actual message lines.
+
+>## ⚠️ Limitations
+>
+>To ensure system stability and a smooth user experience within the PS5 notification daemon, the payload enforces the following rules:
+>
+>* **Lines:** Only non-empty lines of the `message.txt` file are processed and displayed as individual pop-up notifications. Any subsequent lines are ignored.
+>* **Max 90 Characters per Line:** Lines longer than 90 characters are automatically truncated at 86 characters and appended with `...` to prevent UI overflow or notification formatting glitches.
+>* **If a line contains spaces** (without having any text characters), it can be taken as not empty, and if it is within the first five lines, then it will display an empty notification on the screen.
+
+<p align="center">
+  <img src="Screenshots/ss2.jpg" width="500">
+  <br>
+  <em>Five-line demonstration</em>
+</p>
+
+## 🛠️ Build Requirements
+
+* PS5 Payload SDK
+* `prospero-clang` toolchain in a Linux environment (Ubuntu / WSL)
+
+To build the project, run:
+
+```bash
+make clean && make
+```
+
+## 📖 Instructions for Use
+
+1. **Prepare your message file manually:**
+* Create a text file named `message.txt` containing the lines you want to display. The structure is as follows:
+
+```bash
+LINES=2
+CHARS=80
+DELAY=500
+---
+Welcome David!
+All payloads have been executed, you can now start playing!
+```
+Where
+  LINES: number of lines, 
+  CHARS: number of characters per line, 
+  DELAY: delay between notifications in microseconds
+
+* Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
+
+2. **Prepare your message file on your PS5:**
+
+* **message_maker.elf**: Open the PS5's web browser to create a `message.txt` file. There you can configure options such as the number of lines, characters per line, and the delay between notifications. You can also preview the notifications. You can also view this application on your PC connected to the same network at `http://<your-ps5-ip>:8080`
+
+<p align="center">
+  <img src="Screenshots/ss3.png" width="500">
+  <br>
+  <em>message_maker interface</em>
+</p>
+
+3. **Prepare your message file on your PC:**
+
+* **PS5 NotifyStudio.exe** : Windows application with an interface to create the message.txt file where you can configure all the options such as number of lines, characters per line and delay between notifications, and you can also see a preview of the notifications.Finally, it generates the message.txt file in the same path as the application.
+
+<p align="center">
+  <img src="Screenshots/ss4.png" width="500">
+  <br>
+  <em>PS5 NotifyStudio interface</em>
+</p>
+
+* Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
+
+4. **Run the Payload:**
+* Inject or launch `ps5_notify.elf` on your PS5 using your preferred payload loader.
 
 ## **📖 Inside Autoload.txt:**
 
-Place the payload name ps5_autoloader_updater.elf at the end of the list to avoid conflicts with 
-the .elf file loading process.
+Place the payload `ps5_notify.elf` at the end of the list or wherever you see fit.
 
 ```bash
    	!3000
@@ -81,25 +99,13 @@ the .elf file loading process.
 	!2000
 	pegasus_dl.elf
 	!2000
-	ps5_autoloader_updater.elf
+	ps5_notify.elf
 ```
->[!WARNING]
->If you placed it inside the Autoload.txt file, remember that every time you jailbreak, the .elf file will run, 
->search the USB drive, and copy the files, giving a success notification. If you don't have a USB drive connected, 
->or if you have one without the ps5_autoloader folder, it will give a failure notification.
 
-## **Acknowledgements**
+## 🤖 Credits
 
-* Thanks to **Drakmor** and the **ShadowMountPlus** project for providing a reference for the PS5 system language 
-detection implementation used in this project. The original implementation was analyzed with the help of an AI assistant 
-to understand how the language detection worked and adapt the approach to this project.
-* Special thanks to the **[PS5 Payload SDK](https://github.com/ps5-payload-dev/sdk)** developers for providing the SDK used 
-to build this project.
-
-
-#### 🤖 AI-Assisted Development
-
-This project was developed with the assistance of **[Google Gemini](https://gemini.google.com/)** and **ChatGPT by OpenAI**, 
-used for code generation, debugging, testing, and development guidance.
-
+* Developed with the assistance of **Google Gemini** and **ChatGPT**.
+* Based on foundational tools and payload structures by John Törnblom.
+* Thanks to **Drakmor** and the **ShadowMountPlus** project for providing a reference for the PS5 system language
+detection implementation used in this project.
 
