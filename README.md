@@ -10,7 +10,7 @@ A lightweight C-based payload for PlayStation 5 consoles that reads a local `mes
 
 ## 🚀 Features
 
-* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) first, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5_autoloader/message.txt`).
+* **Smart Search Hierarchy:** Scans external USB ports (`usb0` through `usb7`) looking for `/mnt/usb0/ps5_autoloader/message.txt`, stopping at the first found `message.txt`. If none are found, it falls back to internal storage (`/data/ps5_autoloader/message.txt`).
 * **Clean Formatting & Limits:** Automatically omits blank lines, Use the settings in the message.txt file to display the desired number of lines, being able to adjust the number of characters and delay between notifications. 
 * **Multilingual Error Handling:** Fully supports 31 PS5 system languages for error notifications if the file cannot be located.
 * **Silent Execution:** No progress or search notifications are shown before displaying the actual message lines.
