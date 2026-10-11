@@ -54,8 +54,8 @@ Welcome David!
 All payloads have been executed, you can now start playing!
 ```
 Where
-  LINES: number of lines 
-  CHARS: number of characters per line 
+  LINES: number of lines, 
+  CHARS: number of characters per line, 
   DELAY: delay between notifications in microseconds
 
 * Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
