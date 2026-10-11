@@ -55,15 +55,15 @@ All payloads have been executed, you can now start playing!
 ```
 Where;
 
-* LINES: number of lines, 
-* CHARS: number of characters per line 
-* DELAY: delay between notifications in microseconds
+ * LINES: number of lines 
+ * CHARS: number of characters per line 
+ * DELAY: delay between notifications in microseconds
 
 * Place it either in `/data/ps5_autoloader/` on the console's internal storage, or inside a `ps5_autoloader` folder on the root of an exFAT/FAT32 USB drive.
 
 2. **Prepare your message file on your PS5:**
 
-* **message_maker.elf**: Open the PS5's web browser to create a `message.txt` file. There you can configure options such as the number of lines, characters per line, and the delay between notifications. You can also preview the notifications. You can also view this file on your PC connected to the same network at `http://<your-ps5-ip>:8080`
+* **message_maker.elf**: Open the PS5's web browser to create a `message.txt` file. There you can configure options such as the number of lines, characters per line, and the delay between notifications. You can also preview the notifications. You can also view this application on your PC connected to the same network at `http://<your-ps5-ip>:8080`
 
 <p align="center">
   <img src="Screenshots/ss3.png" width="500">
