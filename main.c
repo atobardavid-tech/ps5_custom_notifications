@@ -86,13 +86,15 @@ typedef enum {
 
 /*
  * ============================================================
- * Notification messages struct for errors
+ * Notification messages struct for errors and structure validation
  * ============================================================
  */
 
 typedef struct {
     const char *err_internal_only;
     const char *err_usb_and_internal;
+    const char *err_bad_structure;
+    const char *err_empty_lines;
 } notification_strings_t;
 
 
@@ -101,7 +103,9 @@ typedef struct {
  */
 static const notification_strings_t lang_en = {
     "Error: message.txt not found in /data/ps5_autoloader/",
-    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths"
+    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths",
+    "Error: Invalid structure expected in message.txt",
+    "Error: text lines are empty in message.txt"
 };
 
 /*
@@ -109,7 +113,9 @@ static const notification_strings_t lang_en = {
  */
 static const notification_strings_t lang_es_es = {
     "Error: no se ha encontrado el archivo message.txt en /data/ps5_autoloader/",
-    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB"
+    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB",
+    "Error: estructura esperada no encontrada en message.txt",
+    "Error: en message.txt las lineas de texto estan vacias"
 };
 
 /*
@@ -117,7 +123,9 @@ static const notification_strings_t lang_es_es = {
  */
 static const notification_strings_t lang_es_mx = {
     "Error: no se ha encontrado el archivo message.txt en /data/ps5_autoloader/",
-    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB"
+    "Error: no se encontro message.txt en /data/ps5_autoloader/ ni en las rutas USB",
+    "Error: estructura esperada no encontrada en message.txt",
+    "Error: en message.txt las lineas de texto estan vacias"
 };
 
 /*
@@ -125,7 +133,9 @@ static const notification_strings_t lang_es_mx = {
  */
 static const notification_strings_t lang_ja = {
     "エラー: /data/ps5_autoloader/ に message.txt が見つかりません",
-    "エラー: /data/ps5_autoloader/ および USB パスに message.txt が見つかりません"
+    "エラー: /data/ps5_autoloader/ および USB パスに message.txt が見つかりません",
+    "エラー: message.txt の構造が無効です",
+    "エラー: message.txt のテキスト行が空です"
 };
 
 /*
@@ -133,7 +143,9 @@ static const notification_strings_t lang_ja = {
  */
 static const notification_strings_t lang_fr_fr = {
     "Erreur : message.txt introuvable dans /data/ps5_autoloader/",
-    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB"
+    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB",
+    "Erreur : structure attendue invalide dans message.txt",
+    "Erreur : les lignes de texte sont vides dans message.txt"
 };
 
 /*
@@ -141,7 +153,9 @@ static const notification_strings_t lang_fr_fr = {
  */
 static const notification_strings_t lang_fr_ca = {
     "Erreur : message.txt introuvable dans /data/ps5_autoloader/",
-    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB"
+    "Erreur : message.txt introuvable dans /data/ps5_autoloader/ ni sur les chemins USB",
+    "Erreur : structure attendue invalide dans message.txt",
+    "Erreur : les lignes de texte sont vides dans message.txt"
 };
 
 /*
@@ -149,7 +163,9 @@ static const notification_strings_t lang_fr_ca = {
  */
 static const notification_strings_t lang_de = {
     "Fehler: message.txt wurde in /data/ps5_autoloader/ nicht gefunden",
-    "Fehler: message.txt weder in /data/ps5_autoloader/ noch in USB-Pfaden gefunden"
+    "Fehler: message.txt weder in /data/ps5_autoloader/ noch in USB-Pfaden gefunden",
+    "Fehler: Ungültige Struktur in message.txt erwartet",
+    "Fehler: Textzeilen sind in message.txt leer"
 };
 
 /*
@@ -157,7 +173,9 @@ static const notification_strings_t lang_de = {
  */
 static const notification_strings_t lang_it = {
     "Errore: message.txt non trovato in /data/ps5_autoloader/",
-    "Errore: message.txt non trovato né in /data/ps5_autoloader/ né nei percorsi USB"
+    "Errore: message.txt non trovato né in /data/ps5_autoloader/ né nei percorsi USB",
+    "Errore: struttura attesa non valida in message.txt",
+    "Errore: le righe di testo sono vuote in message.txt"
 };
 
 /*
@@ -165,7 +183,9 @@ static const notification_strings_t lang_it = {
  */
 static const notification_strings_t lang_nl = {
     "Fout: message.txt niet gevonden in /data/ps5_autoloader/",
-    "Fout: message.txt niet gevonden in /data/ps5_autoloader/ noch in USB-paden"
+    "Fout: message.txt niet gevonden in /data/ps5_autoloader/ noch in USB-paden",
+    "Fout: Ongeldige structuur verwacht in message.txt",
+    "Fout: tekstregels zijn leeg in message.txt"
 };
 
 /*
@@ -173,7 +193,9 @@ static const notification_strings_t lang_nl = {
  */
 static const notification_strings_t lang_pt_pt = {
     "Erro: message.txt nao encontrado em /data/ps5_autoloader/",
-    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB"
+    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB",
+    "Erro: Estrutura esperada invalida em message.txt",
+    "Erro: as linhas de texto estao vazias em message.txt"
 };
 
 /*
@@ -181,7 +203,9 @@ static const notification_strings_t lang_pt_pt = {
  */
 static const notification_strings_t lang_pt_br = {
     "Erro: message.txt nao encontrado em /data/ps5_autoloader/",
-    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB"
+    "Erro: message.txt nao encontrado em /data/ps5_autoloader/ nem nos caminhos USB",
+    "Erro: Estrutura esperada invalida em message.txt",
+    "Erro: as linhas de texto estao vazias em message.txt"
 };
 
 /*
@@ -189,7 +213,9 @@ static const notification_strings_t lang_pt_br = {
  */
 static const notification_strings_t lang_ru = {
     "Ошибка: message.txt не найден в /data/ps5_autoloader/",
-    "Ошибка: message.txt не найден ни в /data/ps5_autoloader/, ни на путях USB"
+    "Ошибка: message.txt не найден ни в /data/ps5_autoloader/, ни на путях USB",
+    "Ошибка: неверная структура в message.txt",
+    "Ошибка: строки текста пусты в message.txt"
 };
 
 /*
@@ -197,7 +223,9 @@ static const notification_strings_t lang_ru = {
  */
 static const notification_strings_t lang_ko = {
     "오류: /data/ps5_autoloader/에서 message.txt를 찾을 수 없습니다",
-    "오류: /data/ps5_autoloader/ 또는 USB 경로에서 message.txt를 찾을 수 없습니다"
+    "오류: /data/ps5_autoloader/ 또는 USB 경로에서 message.txt를 찾을 수 없습니다",
+    "오류: message.txt의 구조가 잘못되었습니다",
+    "오류: message.txt의 텍스트 줄이 비어 있습니다"
 };
 
 /*
@@ -205,7 +233,9 @@ static const notification_strings_t lang_ko = {
  */
 static const notification_strings_t lang_zh_tw = {
     "錯誤：在 /data/ps5_autoloader/ 中找不到 message.txt",
-    "錯誤：在 /data/ps5_autoloader/ 或 USB 路徑中找不到 message.txt"
+    "錯誤：在 /data/ps5_autoloader/ 或 USB 路徑中找不到 message.txt",
+    "錯誤：message.txt 結構无效",
+    "錯誤：message.txt 中的文字行是空的"
 };
 
 /*
@@ -213,7 +243,9 @@ static const notification_strings_t lang_zh_tw = {
  */
 static const notification_strings_t lang_zh_cn = {
     "错误：在 /data/ps5_autoloader/ 中找不到 message.txt",
-    "错误：在 /data/ps5_autoloader/ 或 USB 路径中找不到 message.txt"
+    "错误：在 /data/ps5_autoloader/ 或 USB 路径中找不到 message.txt",
+    "错误：message.txt 结构无效",
+    "错误：message.txt 中的文本行为空"
 };
 
 /*
@@ -221,7 +253,9 @@ static const notification_strings_t lang_zh_cn = {
  */
 static const notification_strings_t lang_fi = {
     "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/",
-    "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/ eikä USB-poluista"
+    "Virhe: tiedostoa message.txt ei loytynyt kansiosta /data/ps5_autoloader/ eikä USB-poluista",
+    "Virhe: virheellinen rakenne tiedostossa message.txt",
+    "Virhe: tekstirivit ovat tyhjiä tiedostossa message.txt"
 };
 
 /*
@@ -229,7 +263,9 @@ static const notification_strings_t lang_fi = {
  */
 static const notification_strings_t lang_sv = {
     "Fel: message.txt hittades inte i /data/ps5_autoloader/",
-    "Fel: message.txt hittades inte i /data/ps5_autoloader/ eller på USB-sökvägar"
+    "Fel: message.txt hittades inte i /data/ps5_autoloader/ eller på USB-sökvägar",
+    "Fel: Ogiltig struktur förväntad i message.txt",
+    "Fel: textrader är tomma i message.txt"
 };
 
 /*
@@ -237,7 +273,9 @@ static const notification_strings_t lang_sv = {
  */
 static const notification_strings_t lang_da = {
     "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/",
-    "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/ eller på USB-stier"
+    "Fejl: message.txt blev ikke fundet i /data/ps5_autoloader/ eller på USB-stier",
+    "Fejl: Ugyldig struktur i message.txt",
+    "Fejl: tekstlinjer er tomme i message.txt"
 };
 
 /*
@@ -245,7 +283,9 @@ static const notification_strings_t lang_da = {
  */
 static const notification_strings_t lang_no = {
     "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/",
-    "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/ eller på USB-baner"
+    "Feil: message.txt ble ikke funnet i /data/ps5_autoloader/ eller på USB-baner",
+    "Feil: Ugyldig struktur i message.txt",
+    "Feil: tekstlinjer er tomme i message.txt"
 };
 
 /*
@@ -253,7 +293,9 @@ static const notification_strings_t lang_no = {
  */
 static const notification_strings_t lang_pl = {
     "Blad: nie znaleziono pliku message.txt w /data/ps5_autoloader/",
-    "Blad: nie znaleziono message.txt w /data/ps5_autoloader/ ani w ścieżkach USB"
+    "Blad: nie znaleziono message.txt w /data/ps5_autoloader/ ani w ścieżkach USB",
+    "Blad: Nieprawidłowa struktura pliku message.txt",
+    "Blad: linie tekstu są puste w message.txt"
 };
 
 /*
@@ -261,7 +303,9 @@ static const notification_strings_t lang_pl = {
  */
 static const notification_strings_t lang_en_gb = {
     "Error: message.txt not found in /data/ps5_autoloader/",
-    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths"
+    "Error: message.txt not found in /data/ps5_autoloader/ nor in USB paths",
+    "Error: Invalid structure expected in message.txt",
+    "Error: text lines are empty in message.txt"
 };
 
 /*
@@ -269,7 +313,9 @@ static const notification_strings_t lang_en_gb = {
  */
 static const notification_strings_t lang_tr = {
     "Hata: message.txt dosyasi /data/ps5_autoloader/ icinde bulunamadi",
-    "Hata: message.txt /data/ps5_autoloader/ icinde veya USB yollarinda bulunamadi"
+    "Hata: message.txt /data/ps5_autoloader/ icinde veya USB yollarinda bulunamadi",
+    "Hata: message.txt içinde geçersiz yapı",
+    "Hata: message.txt içinde metin satırları boş"
 };
 
 /*
@@ -277,7 +323,9 @@ static const notification_strings_t lang_tr = {
  */
 static const notification_strings_t lang_ar = {
     "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/",
-    "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/ ولا في مسارات USB"
+    "خطأ: لم يتم العثور على message.txt في /data/ps5_autoloader/ ولا في مسارات USB",
+    "خطأ: الهيكل المطلوب غير صالح في message.txt",
+    "خطأ: أسطر النص فارغة في message.txt"
 };
 
 /*
@@ -285,7 +333,9 @@ static const notification_strings_t lang_ar = {
  */
 static const notification_strings_t lang_cs = {
     "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/",
-    "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/ ani v USB cestách"
+    "Chyba: soubor message.txt nebyl nalezen v /data/ps5_autoloader/ ani v USB cestách",
+    "Chyba: Očekávaná struktura v message.txt je neplatná",
+    "Chyba: řádky textu jsou prázdné v message.txt"
 };
 
 /*
@@ -293,7 +343,9 @@ static const notification_strings_t lang_cs = {
  */
 static const notification_strings_t lang_hu = {
     "Hiba: a message.txt nem talalhato a /data/ps5_autoloader/ mappaban",
-    "Hiba: a message.txt nem talalhato sem a /data/ps5_autoloader/ mappaban, sem az USB útvonalakon"
+    "Hiba: a message.txt nem talalhato sem a /data/ps5_autoloader/ mappaban, sem az USB útvonalakon",
+    "Hiba: Érvénytelen szerkezet a message.txt fájlban",
+    "Hiba: a szöveges sorok üresek a message.txt fájlban"
 };
 
 /*
@@ -301,7 +353,9 @@ static const notification_strings_t lang_hu = {
  */
 static const notification_strings_t lang_el = {
     "Σφάλμα: το message.txt δεν βρέθηκε στο /data/ps5_autoloader/",
-    "Σφάλμα: το message.txt δεν βρέθηκε ούτε στο /data/ps5_autoloader/ ούτε στις διαδρομές USB"
+    "Σφάλμα: το message.txt δεν βρέθηκε ούτε στο /data/ps5_autoloader/ ούτε στις διαδρομές USB",
+    "Σφάλμα: Μη έγκυρη δομή στο message.txt",
+    "Σφάλμα: οι γραμμές κειμένου είναι κενές στο message.txt"
 };
 
 /*
@@ -309,7 +363,9 @@ static const notification_strings_t lang_el = {
  */
 static const notification_strings_t lang_ro = {
     "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/",
-    "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/ și nici în căile USB"
+    "Eroare: message.txt nu a fost gasit în /data/ps5_autoloader/ și nici în căile USB",
+    "Eroare: Structură invalidă în message.txt",
+    "Eroare: liniile de text sunt goale în message.txt"
 };
 
 /*
@@ -317,7 +373,9 @@ static const notification_strings_t lang_ro = {
  */
 static const notification_strings_t lang_th = {
     "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/",
-    "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/ และในเส้นทาง USB"
+    "ข้อผิดพลาด: ไม่พบ message.txt ใน /data/ps5_autoloader/ และในเส้นทาง USB",
+    "ข้อผิดพลาด: โครงสร้างใน message.txt ไม่ถูกต้อง",
+    "ข้อผิดพลาด: บรรทัดข้อความว่างเปล่าใน message.txt"
 };
 
 /*
@@ -325,7 +383,9 @@ static const notification_strings_t lang_th = {
  */
 static const notification_strings_t lang_vi = {
     "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/",
-    "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/ cũng như trong các đường dẫn USB"
+    "Lỗi: không tìm thấy message.txt trong /data/ps5_autoloader/ cũng như trong các đường dẫn USB",
+    "Lỗi: Cấu trúc tệp message.txt không hợp lệ",
+    "Lỗi: các dòng văn bản trống trong message.txt"
 };
 
 /*
@@ -333,7 +393,9 @@ static const notification_strings_t lang_vi = {
  */
 static const notification_strings_t lang_id = {
     "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/",
-    "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/ maupun di jalur USB"
+    "Kesalahan: message.txt tidak ditemukan di /data/ps5_autoloader/ maupun di jalur USB",
+    "Kesalahan: Struktur yang diharapkan tidak valid di message.txt",
+    "Kesalahan: baris teks kosong di message.txt"
 };
 
 /*
@@ -341,7 +403,9 @@ static const notification_strings_t lang_id = {
  */
 static const notification_strings_t lang_uk = {
     "Помилка: message.txt не знайдено в /data/ps5_autoloader/",
-    "Помилка: message.txt не знайдено ні в /data/ps5_autoloader/, ні на шляхах USB"
+    "Помилка: message.txt не знайдено ні в /data/ps5_autoloader/, ні на шляхах USB",
+    "Помилка: Неочікувана структура в message.txt",
+    "Помилка: рядки тексту порожні в message.txt"
 };
 
 
@@ -453,7 +517,6 @@ int main(int argc, char *argv[])
         char usb_base[32];
         struct stat st;
 
-        // Comprobar si el punto de montaje físico de la USB (ej: /mnt/usb0) existe
         snprintf(usb_base, sizeof(usb_base), "/mnt/usb%d", i);
         if (stat(usb_base, &st) == 0 && S_ISDIR(st.st_mode)) {
             usb_connected_flag = 1;
@@ -468,7 +531,6 @@ int main(int argc, char *argv[])
 
         file = fopen(filepath, "r");
         if (file) {
-            // Se encontró el archivo en la USB, detenemos la búsqueda aquí
             break;
         }
     }
@@ -499,33 +561,102 @@ int main(int argc, char *argv[])
     }
 
     /*
-     * 4. Read file line by line (Max 5 lines, max 90 chars per line with '...')
+     * 4. Read and validate configuration parameters from the first lines
+     */
+    int max_lines = 3;
+    int chars_per_line = 90;
+    int delay_ms = 300;
+
+    // Leer línea 1: LINES=X
+    if (fgets(line_buffer, sizeof(line_buffer), file) == NULL || strncmp(line_buffer, "LINES=", 6) != 0) {
+        show_notification(msg->err_bad_structure);
+        fclose(file);
+        return -1;
+    }
+    max_lines = atoi(line_buffer + 6);
+
+    // Leer línea 2: CHARS=X
+    if (fgets(line_buffer, sizeof(line_buffer), file) == NULL || strncmp(line_buffer, "CHARS=", 6) != 0) {
+        show_notification(msg->err_bad_structure);
+        fclose(file);
+        return -1;
+    }
+    chars_per_line = atoi(line_buffer + 6);
+
+    // Leer línea 3: DELAY=X
+    if (fgets(line_buffer, sizeof(line_buffer), file) == NULL || strncmp(line_buffer, "DELAY=", 6) != 0) {
+        show_notification(msg->err_bad_structure);
+        fclose(file);
+        return -1;
+    }
+    delay_ms = atoi(line_buffer + 6);
+
+    // Leer línea 4: --- (separador)
+    if (fgets(line_buffer, sizeof(line_buffer), file) == NULL || strncmp(line_buffer, "---", 3) != 0) {
+        show_notification(msg->err_bad_structure);
+        fclose(file);
+        return -1;
+    }
+
+    // Límites de seguridad para evitar desbordamientos
+    if (max_lines < 1) max_lines = 1;
+    if (max_lines > 10) max_lines = 10;
+    if (chars_per_line < 10) chars_per_line = 10;
+    if (chars_per_line > 200) chars_per_line = 200;
+
+    /*
+     * 5. Read message lines starting from line 5 onwards and validate they are not empty
      */
     int lines_shown = 0;
+    int valid_lines_count = 0;
 
-    while (fgets(line_buffer, sizeof(line_buffer), file) != NULL && lines_shown < 5) {
+    // Guardar posición actual para hacer una verificación previa de contenido no vacío
+    long pos = ftell(file);
+    while (fgets(line_buffer, sizeof(line_buffer), file) != NULL) {
+        size_t len = strlen(line_buffer);
+        if (len > 0 && (line_buffer[len - 1] == '\n' || line_buffer[len - 1] == '\r')) {
+            line_buffer[--len] = '\0';
+        }
+        // Verificar si la línea tiene al menos un caracter imprimible/válido
+        for (size_t i = 0; i < len; i++) {
+            if (line_buffer[i] != ' ' && line_buffer[i] != '\t') {
+                valid_lines_count++;
+                break;
+            }
+        }
+    }
+
+    if (valid_lines_count == 0) {
+        show_notification(msg->err_empty_lines);
+        fclose(file);
+        return -1;
+    }
+
+    // Regresar al inicio del bloque de texto
+    fseek(file, pos, SEEK_SET);
+
+    while (fgets(line_buffer, sizeof(line_buffer), file) != NULL && lines_shown < max_lines) {
         
-        // Remover salto de línea al final si existe
         size_t len = strlen(line_buffer);
         if (len > 0 && (line_buffer[len - 1] == '\n' || line_buffer[len - 1] == '\r')) {
             line_buffer[--len] = '\0';
         }
 
-        // Omitir líneas en blanco
         if (len == 0) {
             continue;
         }
 
-        // Truncar a un máximo de 90 caracteres y colocar puntos suspensivos si excede
-        char final_line[108];
-        if (len > 90) {
-            snprintf(final_line, sizeof(final_line), "%.86s...", line_buffer);
+        char final_line[256];
+        if (len > chars_per_line) {
+            snprintf(final_line, sizeof(final_line), "%.*s...", chars_per_line - 3, line_buffer);
         } else {
             snprintf(final_line, sizeof(final_line), "%s", line_buffer);
         }
 
-        // Mostrar como notificación en pantalla
         show_notification(final_line);
+        
+        usleep(delay_ms * 1000);
+
         lines_shown++;
     }
 
